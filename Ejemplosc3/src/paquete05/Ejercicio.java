@@ -15,11 +15,33 @@ public class Ejercicio {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
-        
-        int[][] arreglo1 = new int[4][11];
-        String[] nombresEstudiante = new String[5];
+
+        int[][] estaciones = new int[5][12];
+        String[] nombres = new String[5];
         double sumaIngresos;
+        sumaIngresos = 0;
+        int valorIngresado;
+        int contadormes;
         
+         for (int i = 0; i < estaciones.length; i++) {
+            for (int j = 0; j < estaciones[i].length; j++) {
+                System.out.printf("Ingrese [%d][%d]\t:",
+                        i, j);
+                valorIngresado = entrada.nextInt();
+                estaciones[i][j] = valorIngresado;
+            }
+            
+            System.out.println();
+        }
+
+        for (int fila = 0; fila < estaciones.length; fila++) {
+            
+            for (int col = 0; col < estaciones[fila].length; col++) { 
+                
+                sumaIngresos = sumaIngresos + estaciones[fila][col];
+
+            }
+            System.out.printf("Suma: %s", sumaIngresos);
+        }
     }
-    
 }
