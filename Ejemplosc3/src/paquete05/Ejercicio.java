@@ -21,14 +21,16 @@ public class Ejercicio {
         double sumaIngresos;
         sumaIngresos = 0;
         int valorIngresado;
-        int contadormes;
+
         
          for (int i = 0; i < estaciones.length; i++) {
+             
             for (int j = 0; j < estaciones[i].length; j++) {
-                System.out.printf("Ingrese [%d][%d]\t:",
-                        i, j);
+                System.out.printf("Ingrese %d \t:",
+                        j+1);
                 valorIngresado = entrada.nextInt();
                 estaciones[i][j] = valorIngresado;
+
             }
             
             System.out.println();
