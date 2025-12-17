@@ -19,7 +19,7 @@ public class Ejemplo05 {
         
         int[][] arreglo1 = {{10, 41, 40}, {1, 2, 3}};
         /*
-        10      41      40
+        10      41      42
         1       2       3
         */
         int suma = 0;
