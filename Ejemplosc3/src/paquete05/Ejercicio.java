@@ -65,6 +65,5 @@ public class Ejercicio {
         System.out.println("Encargado de la estación: " + nombres[indiceMayor]);
         System.out.println("Cantidad de la estación más productiva: $ " + mayorProduccion);
 
-        entrada.close();
     }
 }
