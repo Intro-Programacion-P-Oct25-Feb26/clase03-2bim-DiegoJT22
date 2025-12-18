@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author daigo
  */
 public class Ejercicio {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
@@ -67,5 +68,3 @@ public class Ejercicio {
         entrada.close();
     }
 }
-
-    
