@@ -21,29 +21,51 @@ public class Ejercicio {
         double sumaIngresos;
         sumaIngresos = 0;
         int valorIngresado;
+        int[] totalPorEstacion = new int[5];
+        int mayorProduccion = 0;
+        int indiceMayor = 0;
 
-        
-         for (int i = 0; i < estaciones.length; i++) {
-             
+        for (int i = 0; i < estaciones.length; i++) {
+            System.out.printf("Ingrese el nombre de la estacion %d \t:",
+                    i + 1);
+            nombres[i] = entrada.nextLine();
+
             for (int j = 0; j < estaciones[i].length; j++) {
-                System.out.printf("Ingrese %d \t:",
-                        j+1);
+                System.out.printf("Ingrese el monto de dinero del mes %d de la estacion %d \t:",
+                        j + 1, i + 1);
                 valorIngresado = entrada.nextInt();
                 estaciones[i][j] = valorIngresado;
 
             }
-            
+            entrada.nextLine();
+
             System.out.println();
         }
 
-        for (int fila = 0; fila < estaciones.length; fila++) {
-            
-            for (int col = 0; col < estaciones[fila].length; col++) { 
-                
-                sumaIngresos = sumaIngresos + estaciones[fila][col];
-
+        for (int i = 0; i < estaciones.length; i++) {
+            int suma = 0;
+            for (int j = 0; j < estaciones[i].length; j++) {
+                suma += estaciones[i][j];
             }
-            System.out.printf("Suma: %s", sumaIngresos);
+            totalPorEstacion[i] = suma;
+
+            if (suma > mayorProduccion) {
+                mayorProduccion = suma;
+                indiceMayor = i;
+            }
+            System.out.println("\nAnálisis de Producción\n");
         }
+        for (int i = 0; i < estaciones.length; i++) {
+            System.out.printf("Nombre Estación %d - Total Producción: $ %d\n",
+                    i + 1, totalPorEstacion[i]);
+        }
+
+        System.out.println("\nEstación más productiva: Nombre Estación " + (indiceMayor + 1));
+        System.out.println("Encargado de la estación: " + nombres[indiceMayor]);
+        System.out.println("Cantidad de la estación más productiva: $ " + mayorProduccion);
+
+        entrada.close();
     }
 }
+
+    
